@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* 45px au-dessus du Header, 50px entre le Header et la bannière */
+  padding: 45px 0 50px;
+}
+
+.header__logo {
+  width: 210px;
+  height: 68px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 57px;
+}
+
+.header__link {
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 143%;
+  text-align: right;
+  text-decoration: none;
+}
+
+/* Dans la maquette, "Accueil" a une largeur fixe de 136px (texte aligné à droite) */
+.header__link:first-child {
+  width: 136px;
+}
+
+/* Lien de la page en cours : souligné */
+.header__link.active {
+  text-decoration: underline;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  /* 20px au-dessus du Header, 27px entre le Header et la bannière */
+  .header {
+    padding: 20px 0 27px;
+  }
+
+  .header__logo {
+    width: 145px;
+    height: 47px;
+  }
+
+  .header__nav {
+    gap: 28px;
+  }
+
+  .header__link {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .header__link:first-child {
+    width: auto;
+  }
+}

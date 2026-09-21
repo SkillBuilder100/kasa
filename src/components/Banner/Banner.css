@@ -1,0 +1,64 @@
+.banner {
+  position: relative;
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Voile sombre par-dessus la photo pour que le texte reste lisible */
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.banner__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--white);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 143%;
+  /* Centre aussi chaque ligne si le titre passe sur deux lignes */
+  text-align: center;
+  /* Contour noir de 1px à l'extérieur des lettres : le trait fait 2px,
+     mais "paint-order" dessine le blanc par-dessus, seul 1px reste visible */
+  -webkit-text-stroke: 2px var(--black);
+  paint-order: stroke fill;
+  /* Dans la maquette, le titre est décalé de 20px à droite du centre
+     (273px à gauche, 234px à droite dans la bannière) */
+  transform: translateX(20px);
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .banner {
+    height: 111px;
+    border-radius: 10px;
+    justify-content: flex-start;
+    padding: 0 16px;
+  }
+
+  .banner__title {
+    font-size: 24px;
+    line-height: 100%;
+    /* Zone de 225px de large : le titre passe sur 2 lignes comme sur la maquette */
+    max-width: 225px;
+    text-align: left;
+    transform: none;
+  }
+}

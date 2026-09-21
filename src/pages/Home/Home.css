@@ -1,0 +1,7 @@
+/* Message affiché pendant le chargement ou en cas d'erreur */
+.home__message {
+  margin: 43px 0 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}

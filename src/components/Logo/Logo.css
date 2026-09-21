@@ -1,0 +1,8 @@
+.logo {
+  object-fit: contain;
+}
+
+/* Passe le logo rouge en blanc */
+.logo--white {
+  filter: brightness(0) invert(1);
+}

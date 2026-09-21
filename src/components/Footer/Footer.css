@@ -1,0 +1,44 @@
+.footer {
+  /* Toute la largeur de l'écran, 209px de haut, fond noir */
+  height: 209px;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 66px;
+}
+
+.footer__logo {
+  width: 122px;
+  height: 39.44px;
+}
+
+/* Zone de texte de 513x46px qui commence à 134px du haut du Footer
+   (logo : 66px + 39.44px = 105.44px, donc 28.56px d'écart) */
+.footer__text {
+  margin: 28.56px 0 0;
+  width: 513px;
+  height: 46px;
+  /* Texte calé en bas de sa zone (Vertical alignment : Bottom) */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 143%;
+  text-align: center;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  /* Le logo reste à 66px du haut, comme sur PC */
+
+  .footer__text {
+    margin-top: 11px;
+    width: auto;
+    height: auto;
+    font-size: 12px;
+    max-width: 120px;
+  }
+}

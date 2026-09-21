@@ -1,0 +1,31 @@
+.gallery {
+  /* 43px entre la bannière et la galerie */
+  margin: 43px 0 50px;
+  /* haut 56px, droite 50px, bas 43px, gauche 50px */
+  padding: 56px 50px 43px;
+  background: var(--light-grey);
+  border-radius: 25px;
+  display: grid;
+  /* 3 colonnes de 340px sur la maquette PC (1440px),
+     2 colonnes si l'écran est plus étroit */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 60px;
+  row-gap: 50px;
+}
+
+/* Version mobile : pas de fond gris, une carte par ligne */
+@media (max-width: 768px) {
+  .gallery {
+    margin: 22px 0;
+    padding: 0;
+    background: none;
+    grid-template-columns: 1fr;
+    /* Les tuiles gardent leur hauteur de 255px (sinon la grille les écrase) */
+    grid-auto-rows: 255px;
+    row-gap: 20px;
+    /* 3 tuiles visibles à la fois (3 x 255px + 2 x 20px = 805px),
+       les suivantes sont accessibles avec la barre de défilement */
+    max-height: 805px;
+    overflow-y: auto;
+  }
+}
