@@ -3,49 +3,75 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 66px 0 160px;
+  /* Le bloc 404 est à 139px sous le logo : 45 + 68 + 139 = 252px du haut de la page,
+     le contenu commence à 163px (sous la marge du Header), donc 252 - 163 = 89px */
+  padding: 89px 0 160px;
   color: var(--primary);
 }
 
+/* Bloc de 597 x 263px (Figma) */
 .not-found__code {
   margin: 0;
+  width: 597px;
   font-size: 288px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 263px;
 }
 
+/* Message de 872 x 51px, 139px sous le bloc 404 (Figma) */
 .not-found__message {
-  margin: 66px 0 0;
+  margin: 139px 0 0;
   font-size: 36px;
   font-weight: 500;
+  line-height: 143%;
 }
 
+/* Retour à la ligne du message : masqué sur PC */
+.not-found__break {
+  display: none;
+}
+
+/* Lien de 284 x 26px (Figma) */
 .not-found__link {
+  display: block;
   margin-top: 182px;
-  color: var(--primary);
+  color: var(--black);
   font-size: 18px;
   font-weight: 500;
+  line-height: 143%;
   text-decoration: underline;
 }
 
 /* Version mobile */
 @media (max-width: 768px) {
+  /* Le bloc 404 est à 113px sous le logo : 20 + 47 + 113 = 180px du haut de la page,
+     le contenu commence à 94px (sous la marge du Header), donc 180 - 94 = 86px */
   .not-found {
-    padding: 100px 0 130px;
+    /* 113px entre le lien et le Footer (Figma) */
+    padding: 86px 0 113px;
   }
 
+  /* Bloc de 198 x 99px (Figma) */
   .not-found__code {
+    width: 198px;
     font-size: 96px;
+    line-height: 99px;
   }
 
+  /* Message de 260 x 52px, 113px sous le bloc 404 (Figma) */
   .not-found__message {
-    margin-top: 11px;
+    margin-top: 113px;
     font-size: 18px;
     max-width: 260px;
   }
 
+  .not-found__break {
+    display: inline;
+  }
+
+  /* Lien de 221 x 20px, 113px sous le message (Figma) */
   .not-found__link {
-    margin-top: 133px;
+    margin-top: 113px;
     font-size: 14px;
   }
 }

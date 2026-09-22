@@ -11,6 +11,11 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   column-gap: 60px;
   row-gap: 50px;
+  /* 6 tuiles visibles à la fois comme sur Figma (2 lignes de 3) :
+     56px + 340px + 50px + 340px + 43px = 829px,
+     les suivantes sont accessibles avec la barre de défilement */
+  max-height: 829px;
+  overflow-y: auto;
 }
 
 /* Version mobile : pas de fond gris, une carte par ligne */

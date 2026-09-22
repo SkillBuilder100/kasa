@@ -2,8 +2,7 @@ import Banner from '../../components/Banner/Banner.jsx'
 import Gallery from '../../components/Gallery/Gallery.jsx'
 import useFetch from '../../hooks/useFetch.js'
 import { API_URL } from '../../api/config.js'
-// Image provisoire : à remplacer par la photo de la falaise (Image source 1)
-import bannerImage from '../../assets/banner-about.jpg'
+import bannerImage from '../../assets/banner-home.jpg'
 import './Home.css'
 
 function Home() {

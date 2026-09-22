@@ -1,0 +1,18 @@
+/* Liste des blocs dépliables, centrée */
+.about {
+  max-width: 1023px;
+  /* 38px sous la bannière et 38px avant le Footer */
+  margin: 38px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  /* 19px sous la bannière et 19px avant le Footer */
+  .about {
+    margin: 19px 0;
+    gap: 20px;
+  }
+}
