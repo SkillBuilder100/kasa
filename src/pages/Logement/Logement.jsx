@@ -2,6 +2,10 @@ import { useParams } from 'react-router'
 import useFetch from '../../hooks/useFetch.js'
 import { API_URL } from '../../api/config.js'
 import Slideshow from '../../components/Slideshow/Slideshow.jsx'
+import Host from '../../components/Host/Host.jsx'
+import Rating from '../../components/Rating/Rating.jsx'
+import Collapse from '../../components/Collapse/Collapse.jsx'
+import Tags from '../../components/Tags/Tags.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import './Logement.css'
 
@@ -21,7 +25,37 @@ function Logement() {
     <article className="logement">
       {/* key : le carrousel repart de la 1re photo quand on change de logement */}
       <Slideshow key={logement.id} pictures={logement.pictures} title={logement.title} />
-      <h1 className="logement__title">{logement.title}</h1>
+      {/* À gauche : titre, localisation (30px sous le carrousel) et tags
+          À droite : l'hôte (24px sous le carrousel) et la note */}
+      <div className="logement__header">
+        <div className="logement__info">
+          <div className="logement__heading">
+            <h1 className="logement__title">{logement.title}</h1>
+            <p className="logement__location">{logement.location}</p>
+          </div>
+          {/* Tags 20px sous la localisation */}
+          <Tags tags={logement.tags} />
+        </div>
+        {/* À droite : l'hôte, puis la note 21px en dessous */}
+        <div className="logement__host-rating">
+          <Host name={logement.host.name} picture={logement.host.picture} />
+          <Rating value={logement.rating} />
+        </div>
+      </div>
+
+      {/* Description et équipements : 24px sous les tags, deux menus de 582px, 76px d'écart */}
+      <div className="logement__details">
+        <Collapse title="Description" size="medium">
+          <p>{logement.description}</p>
+        </Collapse>
+        <Collapse title="Équipements" size="medium">
+          <ul>
+            {logement.equipments.map((equipment) => (
+              <li key={equipment}>{equipment}</li>
+            ))}
+          </ul>
+        </Collapse>
+      </div>
     </article>
   )
 }

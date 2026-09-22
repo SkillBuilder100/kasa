@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './Slideshow.css'
 
-// Flèche du carrousel (chevron), orientée vers la gauche ou vers la droite
+// Flèche du carrousel : chevron de 46.68 x 79.2px (Figma), trait de 10px,
+// orienté vers la droite ; la flèche gauche est la même, retournée
 function Arrow({ direction }) {
-  const path = direction === 'left' ? 'M40 4 L8 40 L40 76' : 'M8 4 L40 40 L8 76'
   return (
-    <svg className="slideshow__arrow-icon" viewBox="0 0 48 80" aria-hidden="true">
-      <path d={path} />
+    <svg
+      className={`slideshow__arrow-icon slideshow__arrow-icon--${direction}`}
+      viewBox="0 0 46.68 79.2"
+      aria-hidden="true"
+    >
+      <path d="M5 5 L39.6 39.6 L5 74.2" />
     </svg>
   )
 }

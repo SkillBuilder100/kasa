@@ -69,6 +69,16 @@
   list-style: none;
 }
 
+/* Taille "medium" (fiche logement) : titre et texte plus petits */
+.collapse--medium .collapse__title {
+  font-size: 18px;
+  line-height: 143%;
+}
+
+.collapse--medium .collapse__content {
+  font-size: 18px;
+}
+
 @keyframes collapse-open {
   from {
     opacity: 0;

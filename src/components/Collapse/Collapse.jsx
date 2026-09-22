@@ -3,14 +3,15 @@ import './Collapse.css'
 
 // Bloc dépliable : un titre toujours visible, un contenu affiché ou masqué au clic
 // "children" permet de passer n'importe quel contenu : un paragraphe, une liste...
-function Collapse({ title, children, defaultOpen = false }) {
+// "size" : "large" (page À propos) ou "medium" (fiche logement)
+function Collapse({ title, children, defaultOpen = false, size = 'large' }) {
   // Deux états possibles : ouvert (true) ou fermé (false)
   const [isOpen, setIsOpen] = useState(defaultOpen)
   // Identifiant unique pour relier le bouton à son contenu (accessibilité)
   const contentId = useId()
 
   return (
-    <div className={`collapse ${isOpen ? 'collapse--open' : ''}`}>
+    <div className={`collapse collapse--${size} ${isOpen ? 'collapse--open' : ''}`}>
       <button
         type="button"
         className="collapse__header"

@@ -11,11 +11,11 @@
   object-fit: cover;
 }
 
-/* Flèches blanches à gauche et à droite, centrées verticalement */
+/* Flèches blanches à gauche et à droite : 149.23px sous le haut du carrousel,
+   186.57px au-dessus du bas (149.23 + 79.2 + 186.57 = 415px) */
 .slideshow__arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 149.23px;
   display: flex;
   padding: 0;
   border: none;
@@ -24,22 +24,27 @@
 }
 
 .slideshow__arrow--left {
-  left: 23px;
+  left: 23.36px;
 }
 
 .slideshow__arrow--right {
-  right: 23px;
+  right: 23.36px;
 }
 
+/* Flèche blanche de 46.68 x 79.2px (Figma) */
 .slideshow__arrow-icon {
-  width: 48px;
-  height: 80px;
+  width: 46.68px;
+  height: 79.2px;
   fill: none;
   stroke: var(--white);
-  stroke-width: 8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+  stroke-width: 10;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+/* La flèche gauche est la flèche droite retournée */
+.slideshow__arrow-icon--left {
+  transform: scaleX(-1);
 }
 
 /* Numéro de la photo (ex : 1/4), en bas au centre */
@@ -62,6 +67,12 @@
     border-radius: 10px;
   }
 
+  /* En mobile, les flèches restent centrées verticalement */
+  .slideshow__arrow {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .slideshow__arrow--left {
     left: 6px;
   }
@@ -70,10 +81,10 @@
     right: 6px;
   }
 
+  /* Flèche 4 fois plus petite en mobile */
   .slideshow__arrow-icon {
-    width: 12px;
-    height: 20px;
-    stroke-width: 10;
+    width: 11.67px;
+    height: 19.8px;
   }
 
   /* Le numéro est masqué en mobile */

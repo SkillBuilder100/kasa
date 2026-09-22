@@ -1,0 +1,39 @@
+/* Tags de 115 x 25px espacés de 10px : 3 tags = 365px (Figma) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags__item {
+  /* Largeur minimale de 115px : un tag plus long s'élargit au lieu de déborder */
+  min-width: 115px;
+  height: 25px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .tags {
+    gap: 5px;
+  }
+
+  .tags__item {
+    min-width: 84px;
+    height: 18px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+}

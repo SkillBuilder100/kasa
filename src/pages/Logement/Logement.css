@@ -2,11 +2,63 @@
   margin-bottom: 50px;
 }
 
-.logement__title {
-  margin: 30px 0 0;
+/* Rang titre + hôte : l'hôte commence 24px sous le carrousel (Top 602px),
+   le titre 6px plus bas (Top 608px, soit 30px sous le carrousel) */
+.logement__header {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Colonne de gauche : titre + localisation, puis les tags 20px en dessous */
+.logement__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logement__heading {
+  margin-top: 6px;
   color: var(--primary);
+}
+
+/* Hôte et note alignés à droite, 21px entre les deux */
+.logement__host-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 21px;
+}
+
+.logement__title {
+  margin: 0;
   font-size: 36px;
   font-weight: 500;
+  line-height: 142.6%;
+}
+
+.logement__location {
+  margin: 0;
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 143%;
+}
+
+/* Rangée des menus : 24px sous les tags (et 31px sous les étoiles),
+   deux menus de 582px séparés de 76px */
+.logement__details {
+  margin-top: 24px;
+  display: flex;
+  gap: 76px;
+  /* Ouvrir un menu ne doit pas étirer l'autre */
+  align-items: flex-start;
+}
+
+.logement__details .collapse {
+  flex: 1;
 }
 
 /* Message pendant le chargement ou en cas d'erreur */
@@ -19,8 +71,29 @@
 
 /* Version mobile */
 @media (max-width: 768px) {
-  .logement__title {
+  /* En mobile, l'hôte passe sous le titre */
+  .logement__header {
     margin-top: 15px;
+    flex-direction: column;
+  }
+
+  .logement__heading {
+    margin-top: 0;
+  }
+
+  /* En mobile, les menus sont l'un sous l'autre */
+  .logement__details {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .logement__title {
     font-size: 18px;
+  }
+
+  .logement__location {
+    font-size: 14px;
   }
 }
