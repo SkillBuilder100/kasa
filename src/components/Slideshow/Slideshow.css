@@ -67,18 +67,19 @@
     border-radius: 10px;
   }
 
-  /* En mobile, les flèches restent centrées verticalement */
+  /* En mobile : 118.1px sous le haut du carrousel, 117.1px au-dessus du bas
+     (118.1 + 19.8 + 117.1 = 255px) */
   .slideshow__arrow {
-    top: 50%;
-    transform: translateY(-50%);
+    top: 118.1px;
   }
 
+  /* Chevrons à 5.84px des bords du carrousel (Figma) */
   .slideshow__arrow--left {
-    left: 6px;
+    left: 5.84px;
   }
 
   .slideshow__arrow--right {
-    right: 6px;
+    right: 5.84px;
   }
 
   /* Flèche 4 fois plus petite en mobile */

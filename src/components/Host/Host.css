@@ -19,11 +19,19 @@
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
+  /* Pastille grise de la maquette : visible pendant le chargement de la photo */
+  background: #c4c4c4;
 }
 
 /* Version mobile */
 @media (max-width: 768px) {
+  /* Bloc de 135.5 x 33px : nom de 93px + 10.5px d'écart + photo de 32px (Figma) */
+  .host {
+    gap: 10.5px;
+  }
+
   .host__name {
+    min-width: 93px;
     font-size: 12px;
   }
 

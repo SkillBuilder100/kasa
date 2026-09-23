@@ -71,6 +71,11 @@
 
 /* Version mobile */
 @media (max-width: 768px) {
+  /* 27px entre les menus et le Footer (Figma) */
+  .logement {
+    margin-bottom: 27px;
+  }
+
   /* En mobile, l'hôte passe sous le titre */
   .logement__header {
     margin-top: 15px;
@@ -82,7 +87,17 @@
     margin-top: 0;
   }
 
-  /* En mobile : la note à gauche, l'hôte à droite, sur la même ligne */
+  /* Tags 10px sous la localisation en mobile (Figma) */
+  .logement__info {
+    gap: 10px;
+  }
+
+  /* En mobile : la note à gauche, l'hôte à droite, centrés sur la même ligne.
+     L'hôte (33px de haut) est 16px sous les tags, les étoiles (18px) ~24px (Figma) */
+  .logement__header {
+    gap: 16px;
+  }
+
   .logement__host-rating {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -91,18 +106,24 @@
   }
 
   /* En mobile, les menus sont l'un sous l'autre */
+  /* 13px sous l'hôte, deux menus de 335 x 30px séparés de 20px (Figma) */
   .logement__details {
-    margin-top: 20px;
+    margin-top: 13px;
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
   }
 
+  /* Titre mobile : Montserrat 500, 18px, hauteur de ligne 143 % (Figma) */
   .logement__title {
     font-size: 18px;
+    line-height: 143%;
   }
 
+  /* Localisation mobile : 14px, zone de 22px de haut, 5px sous le titre (Figma) */
   .logement__location {
+    margin-top: 5px;
     font-size: 14px;
+    line-height: 22px;
   }
 }

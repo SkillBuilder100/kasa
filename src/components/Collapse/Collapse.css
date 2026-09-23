@@ -111,4 +111,25 @@
     padding: 20px 10px 12px;
     font-size: 12px;
   }
+
+  /* En mobile, la taille "medium" prend la même petite taille que "large"
+     (sinon la règle .collapse--medium, plus précise, garderait le 18px) */
+  .collapse--medium .collapse__title {
+    font-size: 13px;
+  }
+
+  /* Chevron visible de 16 x 9px, à 12px du bord droit (Figma, taille "Small").
+     Le trait n'occupe pas tout le SVG : 18.7px de SVG = 16px de chevron visible */
+  .collapse--medium .collapse__header {
+    padding-right: 10.7px;
+  }
+
+  .collapse--medium .collapse__arrow {
+    width: 18.7px;
+    height: 18.7px;
+  }
+
+  .collapse--medium .collapse__content {
+    font-size: 12px;
+  }
 }

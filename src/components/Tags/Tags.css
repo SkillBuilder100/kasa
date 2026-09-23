@@ -1,4 +1,4 @@
-/* Tags de 115 x 25px espacés de 10px : 3 tags = 365px (Figma) */
+/* Tags de 115 x 25px (84 x 18px en mobile) espacés de 10px : 3 tags = 365px (Figma) */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -21,19 +21,16 @@
   color: var(--white);
   font-size: 14px;
   font-weight: 700;
+  line-height: 143%;
   white-space: nowrap;
 }
 
 /* Version mobile */
 @media (max-width: 768px) {
-  .tags {
-    gap: 5px;
-  }
-
   .tags__item {
     min-width: 84px;
     height: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 10px;
   }
 }

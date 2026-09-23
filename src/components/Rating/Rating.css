@@ -15,13 +15,14 @@
 }
 
 /* Version mobile */
+/* 5 étoiles de 18px espacées de 2px : bloc de 98 x 18px (Figma) */
 @media (max-width: 768px) {
   .rating {
-    gap: 6px;
+    gap: 2px;
   }
 
   .rating__star {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
 }
