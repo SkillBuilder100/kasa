@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react'
 
-// Hook personnalisé : récupère les données JSON d'une URL
-// Renvoie { data, isLoading, error }
+/**
+ * Hook personnalisé : récupère les données JSON d'une URL.
+ * La requête est relancée quand l'URL change, et annulée si le composant
+ * disparaît avant la réponse.
+ *
+ * @param {string} url - Adresse à appeler
+ * @returns {{data: any, isLoading: boolean, error: (Error & {status?: number})|null}}
+ *   - data : données reçues (null pendant le chargement ou en cas d'erreur)
+ *   - isLoading : true tant que la réponse n'est pas arrivée
+ *   - error : erreur éventuelle ; error.status contient le code HTTP (ex : 404)
+ */
 function useFetch(url) {
   // On mémorise pour quelle URL la réponse a été reçue :
   // tant qu'elle ne correspond pas à l'URL demandée, on est en chargement

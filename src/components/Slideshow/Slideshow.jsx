@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import './Slideshow.css'
 
-// Flèche du carrousel : chevron de 46.68 x 79.2px (Figma), trait de 10px,
-// orienté vers la droite ; la flèche gauche est la même, retournée
+/**
+ * Flèche du carrousel : chevron de 46.68 x 79.2px (Figma), trait de 10px,
+ * dessiné vers la droite ; la flèche gauche est la même, retournée en CSS.
+ *
+ * @param {Object} props
+ * @param {'left'|'right'} props.direction - Sens de la flèche
+ */
 function Arrow({ direction }) {
   return (
     <svg
@@ -15,7 +20,16 @@ function Arrow({ direction }) {
   )
 }
 
-// Carrousel de photos d'un logement
+/**
+ * Carrousel des photos d'un logement.
+ * - Les flèches font défiler les photos en boucle : de la première,
+ *   la flèche gauche mène à la dernière, et inversement.
+ * - S'il n'y a qu'une photo, ni flèche ni numéro ne sont affichés.
+ *
+ * @param {Object} props
+ * @param {string[]} props.pictures - URL des photos du logement
+ * @param {string} props.title - Titre du logement (texte alternatif des photos)
+ */
 function Slideshow({ pictures, title }) {
   // Index de la photo affichée (0 = première photo)
   const [currentIndex, setCurrentIndex] = useState(0)

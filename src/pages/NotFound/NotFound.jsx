@@ -1,7 +1,10 @@
 import { Link } from 'react-router'
 import './NotFound.css'
 
-// Page affichée quand l'adresse n'existe pas (route "*")
+/**
+ * Page d'erreur 404 : affichée pour toute adresse qui n'existe pas (route "*")
+ * et pour un logement dont l'identifiant est inconnu.
+ */
 function NotFound() {
   return (
     <section className="not-found">

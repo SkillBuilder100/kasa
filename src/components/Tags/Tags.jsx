@@ -1,6 +1,11 @@
 import './Tags.css'
 
-// Liste des tags du logement (quartier, ambiance...)
+/**
+ * Liste des tags du logement (quartier, ambiance...).
+ *
+ * @param {Object} props
+ * @param {string[]} props.tags - Tags du logement (uniques, servent de clé React)
+ */
 function Tags({ tags }) {
   return (
     <ul className="tags">

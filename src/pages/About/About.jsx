@@ -4,6 +4,9 @@ import { aboutValues } from '../../data/aboutValues.js'
 import bannerImage from '../../assets/banner-about.jpg'
 import './About.css'
 
+/**
+ * Page À propos (/a-propos) : bannière et valeurs de Kasa dans des blocs dépliables.
+ */
 function About() {
   return (
     <>

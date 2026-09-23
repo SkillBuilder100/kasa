@@ -5,7 +5,10 @@ import About from '../pages/About/About.jsx'
 import Logement from '../pages/Logement/Logement.jsx'
 import NotFound from '../pages/NotFound/NotFound.jsx'
 
-// Toutes les routes de l'application
+/**
+ * Routeur de l'application : associe chaque adresse à sa page.
+ * Toutes les pages partagent le Layout (Header + Footer).
+ */
 function AppRouter() {
   return (
     <BrowserRouter>

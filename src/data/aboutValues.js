@@ -1,4 +1,7 @@
-// Contenu des blocs de la page À propos
+/**
+ * Contenu des blocs dépliables de la page À propos.
+ * @type {Array<{title: string, text: string}>}
+ */
 export const aboutValues = [
   {
     title: 'Fiabilité',

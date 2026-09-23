@@ -1,9 +1,19 @@
 import { useId, useState } from 'react'
 import './Collapse.css'
 
-// Bloc dépliable : un titre toujours visible, un contenu affiché ou masqué au clic
-// "children" permet de passer n'importe quel contenu : un paragraphe, une liste...
-// "size" : "large" (page À propos) ou "medium" (fiche logement)
+/**
+ * Bloc dépliable : un titre toujours visible et un contenu affiché ou masqué au clic.
+ * Deux états possibles : ouvert ou fermé (géré avec useState).
+ * Réutilisé sur la page À propos et sur la fiche logement (Description, Équipements).
+ *
+ * @param {Object} props
+ * @param {string} props.title - Texte de la barre de titre
+ * @param {React.ReactNode} props.children - Contenu affiché une fois ouvert
+ *   (paragraphe, liste...)
+ * @param {boolean} [props.defaultOpen=false] - Ouvert dès l'affichage
+ * @param {'large'|'medium'} [props.size='large'] - Taille : "large" (page À propos)
+ *   ou "medium" (fiche logement)
+ */
 function Collapse({ title, children, defaultOpen = false, size = 'large' }) {
   // Deux états possibles : ouvert (true) ou fermé (false)
   const [isOpen, setIsOpen] = useState(defaultOpen)

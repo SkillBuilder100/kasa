@@ -2,6 +2,10 @@ import { Link, NavLink } from 'react-router'
 import Logo from '../Logo/Logo.jsx'
 import './Header.css'
 
+/**
+ * En-tête commun à toutes les pages : logo (lien vers l'accueil) et menu
+ * de navigation. Le lien de la page en cours est souligné.
+ */
 function Header() {
   return (
     <header className="header">

@@ -9,10 +9,19 @@ import Tags from '../../components/Tags/Tags.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import './Logement.css'
 
-// Fiche d'un logement : l'identifiant vient de l'adresse (/logement/:id)
+/**
+ * Fiche d'un logement (/logement/:id).
+ * L'identifiant vient de l'adresse ; le logement est demandé à l'API.
+ * - Identifiant inconnu (l'API répond 404) : affiche la page 404.
+ * - API injoignable : affiche un message d'erreur.
+ */
 function Logement() {
   const { id } = useParams()
-  const { data: logement, isLoading, error } = useFetch(`${API_URL}/properties/${id}`)
+  // encodeURIComponent : un identifiant contenant "?", "/" ou ".." ne doit pas
+  // modifier l'adresse appelée (ex : "c67ab8a7?x=1" ne doit pas devenir "c67ab8a7")
+  const { data: logement, isLoading, error } = useFetch(
+    `${API_URL}/properties/${encodeURIComponent(id)}`,
+  )
 
   if (isLoading) return <p className="logement__message">Chargement…</p>
   // Identifiant inconnu : l'API répond 404, on affiche la page 404

@@ -2,7 +2,12 @@ import './Rating.css'
 
 const MAX_STARS = 5
 
-// Étoile en SVG : pleine (rouge) ou vide (grise)
+/**
+ * Étoile en SVG.
+ *
+ * @param {Object} props
+ * @param {boolean} props.filled - Étoile pleine (rouge) ou vide (grise)
+ */
 function Star({ filled }) {
   return (
     <svg
@@ -15,7 +20,12 @@ function Star({ filled }) {
   )
 }
 
-// Note du logement sur 5 étoiles
+/**
+ * Note du logement sur 5 étoiles.
+ *
+ * @param {Object} props
+ * @param {string|number} props.value - Note de 1 à 5 (l'API l'envoie en texte : "4")
+ */
 function Rating({ value }) {
   // L'API envoie la note sous forme de texte ("4") : on la convertit en nombre
   const rating = Number(value)
