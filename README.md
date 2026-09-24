@@ -51,6 +51,9 @@ Le site s'ouvre à l'adresse indiquée dans le terminal
 | `npm run build` | Crée la version de production dans `dist/` |
 | `npm run preview` | Affiche la version de production |
 | `npm run lint` | Vérifie le code avec ESLint |
+| `npm test` | Lance les tests |
+| `npm run test:watch` | Relance les tests à chaque modification |
+| `npm run coverage` | Lance les tests et affiche le taux de couverture |
 
 ### Adresse de l'API
 
@@ -104,6 +107,26 @@ src/
 
 Chaque composant est documenté en [JSDoc](https://jsdoc.app) (rôle et props)
 directement dans son fichier.
+
+## Tests
+
+Tests réalisés avec [Vitest](https://vitest.dev) et
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+Chaque fichier de test est placé à côté du composant qu'il teste
+(`Slideshow.jsx` → `Slideshow.test.jsx`).
+
+| Fichier testé | Type | Ce qui est vérifié |
+|---|---|---|
+| `Slideshow` | avec state | photo affichée, flèches et numéro, navigation dans les deux sens, passage de la dernière à la première photo et inversement, logement à une seule photo |
+| `Collapse` | avec state | fermé au départ, ouverture et fermeture (souris et clavier), `defaultOpen`, tailles, plusieurs blocs indépendants |
+| `Banner` | sans state | image, titre présent / absent / vide |
+| `Card` | sans state | titre, lien vers la fiche, couverture présente / absente |
+| `Rating`, `Tags`, `Host` | sans state | affichage selon les props reçues |
+| `useFetch` | hook | chargement, données, erreur 404, API injoignable, changement d'URL, annulation |
+| `App` | intégration | toutes les routes, clic sur une vignette, menu, pages 404, identifiant inconnu, API injoignable |
+
+Taux de couverture : **100 %** des lignes, branches et fonctions sur l'ensemble
+des fichiers (`npm run coverage`).
 
 ## Choix techniques
 

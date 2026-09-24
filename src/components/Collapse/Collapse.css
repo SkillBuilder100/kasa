@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-/* Barre de titre rouge, cliquable */
+/* Barre de titre rouge (seul le chevron est cliquable) */
 .collapse__header {
   position: relative;
   z-index: 1;
@@ -13,12 +13,25 @@
   /* 52px de haut sur PC (Figma) */
   height: 52px;
   padding: 0 22px 0 16px;
-  border: none;
   border-radius: 5px;
   background: var(--primary);
   color: var(--white);
-  font-family: inherit;
+}
+
+/* Bouton du chevron : sans style de bouton, seul le chevron est visible */
+.collapse__toggle {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: none;
   cursor: pointer;
+}
+
+/* Contour visible quand on navigue au clavier (touche Tab) */
+.collapse__toggle:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .collapse__title {
@@ -53,7 +66,8 @@
 
 .collapse__content {
   padding: 32px 16px 20px;
-  color: var(--primary);
+  /* Texte noir (Figma) */
+  color: var(--black);
   font-size: 24px;
   font-weight: 400;
   line-height: 142.6%;
@@ -73,6 +87,18 @@
 .collapse--medium .collapse__title {
   font-size: 18px;
   line-height: 143%;
+}
+
+/* Barre de 582px : 16px + titre de 520px + cadre d'icône de 32px + 14px (Figma).
+   Le chevron visible (24 x 13.71px) est centré dans le cadre de 32px : il se termine
+   à 14 + 4 = 18px du bord. Le trait n'occupe pas tout le SVG : 28px de SVG = 24px visibles */
+.collapse--medium .collapse__header {
+  padding-right: 16px;
+}
+
+.collapse--medium .collapse__arrow {
+  width: 28px;
+  height: 28px;
 }
 
 .collapse--medium .collapse__content {
